@@ -44,6 +44,10 @@ gem "slim"
 gem "sinatra"
 gem "flutie"
 gem "foreman", require: false
+gem "rails_admin"
+gem 'paper_trail', '~> 3.0.6'
+
+
 
 gem "quiet_assets", group: :development
 group :development, :test do

@@ -1,4 +1,6 @@
 class Ringtone < ActiveRecord::Base
+  has_paper_trail
+
   validates :song, presence: true
 
   has_attached_file :source
@@ -21,5 +23,18 @@ class Ringtone < ActiveRecord::Base
 
   def create_ringtone
     RingtoneCropWorker.perform_async(id)
+  end
+
+  rails_admin do
+    list do
+      field :artist
+      field :song
+      field :ringtone do
+        pretty_value do
+          bindings[:view].tag(:audio, { :controls => "", :src => bindings[:object].url(:android) })
+        end
+      end
+      field :processing
+    end
   end
 end

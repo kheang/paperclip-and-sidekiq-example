@@ -4,7 +4,7 @@
   </h2>
   <div class="row">
     <div class="medium-6 columns">
-      <%= image_tag @background.image.url(:small) %>
+      <%= image_tag @background.url(:small) %>
     </div>
     <div class="medium-6 columns">
       <h3>Sizes</h3>
@@ -12,7 +12,7 @@
         <li><%= link_to "iPhone 4", @background.url(:iphone4) %></li>
         <li><%= link_to "iPhone 5", @background.url(:iphone5) %></li>
         <li><%= link_to "iPhone 6", @background.url(:iphone6) %></li>
-        <li><%= link_to "iPhone 7", @background.url(:iphone7) %></li>
+        <li><%= link_to "iPhone 6+", @background.url(:iphone7) %></li>
         <li><%= link_to "Huge (1080x1920)", @background.url(:huge) %></li>
         <li><%= link_to "Large (800x1280)", @background.url(:large) %></li>
         <li><%= link_to "Medium (640x960)", @background.url(:medium) %></li>

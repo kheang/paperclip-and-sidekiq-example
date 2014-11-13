@@ -20,6 +20,8 @@ bundle install
 ./bin/rake db:create
 ```
 
+You will need the Redis server running. Run `brew info redis` to find out how.†
+
 Lastly, you can start both Rails and the Sidekiq server by running:
 
 ```

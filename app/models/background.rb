@@ -1,4 +1,6 @@
 class Background < ActiveRecord::Base
+  has_paper_trail
+
   validates :title, presence: true
 
   has_attached_file :image, :styles => {:iphone4 => "640x960#",
