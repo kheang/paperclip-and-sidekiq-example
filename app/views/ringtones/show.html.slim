@@ -9,10 +9,10 @@
       div id="processing" data-state="false"
         = render partial: "audio", locals: { ringtone: @ringtone }
 
-  h3 Formats
-  ul
-    li = link_to "Android", @ringtone.url(:android)
-    li = link_to "iPhone", @ringtone.url(:iphone)
+        h3 Formats
+        ul
+          li = link_to "Android", @ringtone.url(:android)
+          li = link_to "iPhone", @ringtone.url(:iphone)
 
   javascript:
     var processing = document.querySelector('#processing');
