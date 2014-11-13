@@ -24,6 +24,8 @@ class RingtonesController < ApplicationController
   private
 
   def ringtone_params
-    params.require(:ringtone).permit(:source, :song, :artist, :start_time, :length)
+    ringtone_params = params.require(:ringtone).permit(:source, :song, :artist, :start_time, :length)
+    ringtone_params[:length] = [params[:length], 30].min
+    ringtone_params
   end
 end
