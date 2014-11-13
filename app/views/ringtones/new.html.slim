@@ -6,5 +6,7 @@
   = simple_form_for @ringtone do |f|
     = f.input :song
     = f.input :artist
+    = f.input :start_time, label: 'Start time (enter in seconds)'
+    = f.input :length, label: 'Audio length (max 30 seconds)'
     = f.input :source, label: "Ringtone source file"
     = f.button :submit, class: "radius"

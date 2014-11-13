@@ -46,7 +46,7 @@ gem "flutie"
 gem "foreman", require: false
 gem "rails_admin"
 gem 'paper_trail', '~> 3.0.6'
-
+gem 'mini_portile', '~> 0.6.1'
 
 
 gem "quiet_assets", group: :development

@@ -7,7 +7,7 @@ class RingtoneCropWorker
     ringtone = Ringtone.find(id)
     source = ringtone.source
     outfile = Paperclip::Tempfile.new(['ringtone', '.mp3'])
-    Paperclip.run("ffmpeg", "-i #{source.path} -y -t 30 -acodec copy #{outfile.path}" )
+    Paperclip.run("ffmpeg", "-i #{source.path} -y -ss #{ringtone.start_time} -t #{ringtone.length} -acodec copy #{outfile.path}" )
     ringtone.ringtone = outfile
     ringtone.processing = false
     ringtone.save
