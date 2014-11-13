@@ -26,16 +26,6 @@ ActiveRecord::Schema.define(version: 20141112013745) do
     t.datetime "updated_at"
   end
 
-  create_table "photos", force: true do |t|
-    t.string   "caption"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-
   create_table "ringtones", force: true do |t|
     t.string   "song"
     t.string   "artist"

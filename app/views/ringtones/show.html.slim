@@ -1,9 +1,21 @@
 .small-12.columns
+
   h2 = @ringtone.name
 
-  div = render partial: "audio", locals: { ringtone: @ringtone }
+  - if @ringtone.processing
+      div id="processing" data-state="true"
+        = 'Ringtone still processing...'
+  - else
+      div id="processing" data-state="false"
+        = render partial: "audio", locals: { ringtone: @ringtone }
 
   h3 Formats
   ul
     li = link_to "Android", @ringtone.url(:android)
     li = link_to "iPhone", @ringtone.url(:iphone)
+
+  javascript:
+    var processing = document.querySelector('#processing');
+    if (processing.dataset.state == "true") {
+      setTimeout("location.reload(true);",2000);
+    }
